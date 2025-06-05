@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "name": "Tábua de Corte Premium Ipê",
+    "description": "Tábua artesanal de madeira de ipê, com acabamento premium e bordas arredondadas. Ideal para cortes de carnes nobres.",
+    "price": 189.90,
+    "category": "cutting-boards",
+    "dimensions": "50x35x4cm",
+    "image": "tabua-ipe-premium.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Tábua Média Eucalipto",
+    "description": "Tábua de eucalipto tratado, tamanho ideal para famílias médias. Resistente e durável.",
+    "price": 129.90,
+    "category": "cutting-boards",
+    "dimensions": "40x30x3cm",
+    "image": "tabua-eucalipto-media.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Tábua Pequena Pinus",
+    "description": "Tábua compacta de pinus, perfeita para aperitivos e cortes menores.",
+    "price": 89.90,
+    "category": "cutting-boards",
+    "dimensions": "30x25x2.5cm",
+    "image": "tabua-pinus-pequena.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Espeto Artesanal Inox",
+    "description": "Espeto de aço inox com cabo de madeira torneado à mão. Conjunto com 6 unidades.",
+    "price": 149.90,
+    "category": "accessories",
+    "dimensions": "60cm",
+    "image": "espeto-inox-artesanal.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Conjunto de Facas Premium",
+    "description": "Set com 3 facas profissionais: trinchante, desossa e utilitária. Cabos de madeira.",
+    "price": 299.90,
+    "category": "accessories",
+    "dimensions": "Variadas",
+    "image": "conjunto-facas-premium.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Garfo Trinchante Artesanal",
+    "description": "Garfo trinchante com cabo de madeira nobre, ideal para servir carnes assadas.",
+    "price": 79.90,
+    "category": "accessories",
+    "dimensions": "35cm",
+    "image": "garfo-trinchante.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Kit Churrasco Família Premium",
+    "description": "Kit completo: tábua grande, 6 espetos, faca trinchante, garfo e tábua para temperos.",
+    "price": 399.90,
+    "category": "sets",
+    "dimensions": "Kit completo",
+    "image": "kit-familia-premium.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Kit Iniciante Churrasco",
+    "description": "Kit básico com tábua média, 4 espetos e faca. Ideal para quem está começando.",
+    "price": 199.90,
+    "category": "sets",
+    "dimensions": "Kit básico",
+    "image": "kit-iniciante.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Kit Casal Romântico",
+    "description": "Kit especial para casais: tábua coração, 2 espetos especiais e taças de madeira.",
+    "price": 179.90,
+    "category": "sets",
+    "dimensions": "Kit casal",
+    "image": "kit-casal.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Tábua Personalizada Nome",
+    "description": "Tábua com gravação do seu nome ou frase especial. Escolha o tamanho e madeira.",
+    "price": 219.90,
+    "category": "custom",
+    "dimensions": "Sob medida",
+    "image": "tabua-personalizada-nome.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Tábua Personalizada Logo",
+    "description": "Tábua com gravação de logo empresarial ou desenho personalizado.",
+    "price": 299.90,
+    "category": "custom",
+    "dimensions": "Sob medida",
+    "image": "tabua-personalizada-logo.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Kit Personalizado Empresarial",
+    "description": "Kit completo personalizado para empresas: tábuas com logo, utensílios gravados.",
+    "price": 549.90,
+    "category": "custom",
+    "dimensions": "Kit empresarial",
+    "image": "kit-empresarial.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Tábua Gigante Festas",
+    "description": "Tábua extra grande para grandes eventos e churrascos de confraternização.",
+    "price": 349.90,
+    "category": "cutting-boards",
+    "dimensions": "80x50x5cm",
+    "image": "tabua-gigante.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Suporte para Tábuas",
+    "description": "Suporte de madeira para organizar e secar suas tábuas de forma elegante.",
+    "price": 89.90,
+    "category": "accessories",
+    "dimensions": "40x20x15cm",
+    "image": "suporte-tabuas.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Óleo Especial para Madeira",
+    "description": "Óleo natural para conservação e tratamento de tábuas de madeira. Frasco 250ml.",
+    "price": 39.90,
+    "category": "accessories",
+    "dimensions": "250ml",
+    "image": "oleo-madeira.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Kit Manutenção Completo",
+    "description": "Kit com óleo, lixa especial e instruções para manter suas tábuas sempre novas.",
+    "price": 79.90,
+    "category": "sets",
+    "dimensions": "Kit manutenção",
+    "image": "kit-manutencao.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Tábua com Canaletas",
+    "description": "Tábua especial com canaletas para drenagem de líquidos, ideal para carnes suculentas.",
+    "price": 159.90,
+    "category": "cutting-boards",
+    "dimensions": "45x35x3cm",
+    "image": "tabua-canaletas.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Conjunto Aperitivos",
+    "description": "Mini tábuas e utensílios em miniatura para servir aperitivos e petiscos.",
+    "price": 119.90,
+    "category": "sets",
+    "dimensions": "Kit aperitivos",
+    "image": "conjunto-aperitivos.jpg"
+  }
+]

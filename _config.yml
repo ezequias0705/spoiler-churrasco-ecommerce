@@ -1,0 +1,53 @@
+# GitHub Pages Configuration
+title: "Spoiler do Churrasco"
+description: "Tábuas artesanais personalizadas para churrasco. Produtos únicos feitos à mão com madeira premium."
+url: "https://ezequias0705.github.io"
+baseurl: "/spoiler-churrasco-ecommerce"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - node_modules/
+  - vendor/
+  - produtos.html
+  - carrinho.html
+  - contato.html
+  - js/carrinho.js
+
+# Include files
+include:
+  - _headers
+  - _redirects
+
+# SEO settings
+lang: pt-BR
+author: "Spoiler do Churrasco"
+social:
+  name: "Spoiler do Churrasco"
+  links:
+    - https://facebook.com/spoilerchurrasco
+    - https://instagram.com/spoilerchurrasco
+
+# Performance settings
+sass:
+  style: compressed
+
+# Security headers
+webrick:
+  headers:
+    X-Frame-Options: SAMEORIGIN
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: "1; mode=block"
+    Referrer-Policy: "strict-origin-when-cross-origin"
+    Content-Security-Policy: "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';"

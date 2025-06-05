@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spoiler do Churrasco - Tábuas Artesanais</title>
+    <meta name="description" content="Tábuas artesanais personalizadas para churrasco. Produtos únicos feitos à mão com madeira premium.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">
+                    <i data-lucide="flame"></i>
+                    <span>Spoiler do Churrasco</span>
+                </a>
+                
+                <nav class="nav-desktop">
+                    <button onclick="scrollToSection('home')">Início</button>
+                    <button onclick="scrollToSection('products')">Produtos</button>
+                    <button onclick="scrollToSection('custom')">Personalização</button>
+                    <button onclick="scrollToSection('orders')">Pedidos</button>
+                    <button onclick="scrollToSection('contact')">Contato</button>
+                </nav>
+                
+                <div class="nav-actions">
+                    <button class="cart-btn" onclick="toggleCart()">
+                        <i data-lucide="shopping-cart"></i>
+                        <span id="cart-count" class="cart-badge">0</span>
+                    </button>
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <button onclick="scrollToSection('home'); toggleMobileMenu()">Início</button>
+            <button onclick="scrollToSection('products'); toggleMobileMenu()">Produtos</button>
+            <button onclick="scrollToSection('custom'); toggleMobileMenu()">Personalização</button>
+            <button onclick="scrollToSection('orders'); toggleMobileMenu()">Pedidos</button>
+            <button onclick="scrollToSection('contact'); toggleMobileMenu()">Contato</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Tábuas Artesanais<br><span>Para Seu Churrasco</span></h1>
+                    <p>Produtos únicos e personalizados, feitos à mão com madeira de qualidade premium. Transforme seus churrascos em experiências inesquecíveis.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToSection('products')">
+                            <i data-lucide="grid-3x3"></i>
+                            Ver Produtos
+                        </button>
+                        <button class="btn btn-secondary" onclick="scrollToSection('custom')">
+                            <i data-lucide="palette"></i>
+                            Personalizar
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-visual">
+                        <i data-lucide="utensils" class="hero-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <div class="categories-grid">
+                <div class="category-card" onclick="setCategory('cutting-boards')">
+                    <i data-lucide="grid-3x3"></i>
+                    <h3>Tábuas de Corte</h3>
+                    <p>Diversos tamanhos</p>
+                </div>
+                <div class="category-card" onclick="setCategory('accessories')">
+                    <i data-lucide="utensils"></i>
+                    <h3>Acessórios</h3>
+                    <p>Para churrasco</p>
+                </div>
+                <div class="category-card" onclick="setCategory('sets')">
+                    <i data-lucide="package"></i>
+                    <h3>Kits Completos</h3>
+                    <p>Conjuntos especiais</p>
+                </div>
+                <div class="category-card" onclick="setCategory('custom')">
+                    <i data-lucide="palette"></i>
+                    <h3>Personalizada</h3>
+                    <p>Sob medida</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Produtos</h2>
+                <p>Cada peça é única, feita com carinho e atenção aos detalhes</p>
+            </div>
+            
+            <!-- Category Filters -->
+            <div class="category-filters">
+                <button class="filter-btn active" onclick="filterProducts('all')">Todos</button>
+                <button class="filter-btn" onclick="filterProducts('cutting-boards')">Tábuas</button>
+                <button class="filter-btn" onclick="filterProducts('accessories')">Acessórios</button>
+                <button class="filter-btn" onclick="filterProducts('sets')">Kits</button>
+                <button class="filter-btn" onclick="filterProducts('custom')">Personalizada</button>
+            </div>
+            
+            <!-- Products Grid -->
+            <div id="products-grid" class="products-grid">
+                <!-- Products will be loaded here -->
+            </div>
+            
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Carregando produtos...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customization Section -->
+    <section id="custom" class="customization">
+        <div class="container">
+            <div class="section-header">
+                <h2>Personalização</h2>
+                <p>Crie sua tábua única com gravações personalizadas</p>
+            </div>
+            
+            <div class="custom-options">
+                <div class="custom-card">
+                    <i data-lucide="signature"></i>
+                    <h3>Gravação de Nome</h3>
+                    <p>Adicione nomes, frases ou logos</p>
+                </div>
+                <div class="custom-card">
+                    <i data-lucide="combine"></i>
+                    <h3>Tamanho Sob Medida</h3>
+                    <p>Dimensões específicas para suas necessidades</p>
+                </div>
+                <div class="custom-card">
+                    <i data-lucide="award"></i>
+                    <h3>Acabamento Premium</h3>
+                    <p>Escolha entre diferentes tipos de madeira</p>
+                </div>
+            </div>
+            
+            <div class="custom-form">
+                <h3>Solicite um Orçamento</h3>
+                <form id="custom-form">
+                    <div class="form-group">
+                        <label>Tipo de Produto</label>
+                        <select name="product-type">
+                            <option>Tábua de Corte</option>
+                            <option>Kit Completo</option>
+                            <option>Acessório</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Dimensões (cm)</label>
+                        <input type="text" name="dimensions" placeholder="Ex: 40x30x3">
+                    </div>
+                    <div class="form-group">
+                        <label>Gravação Desejada</label>
+                        <textarea name="engraving" placeholder="Descreva o que gostaria de gravar"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Seu Nome</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>WhatsApp</label>
+                        <input type="tel" name="phone" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i data-lucide="message-circle"></i>
+                        Solicitar Orçamento
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Orders Section -->
+    <section id="orders" class="orders">
+        <div class="container">
+            <div class="section-header">
+                <h2>Como Funciona</h2>
+                <p>Processo simples e transparente</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Escolha</h3>
+                    <p>Selecione o produto ou solicite personalização</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Pedido</h3>
+                    <p>Finalize via WhatsApp com todos os detalhes</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Produção</h3>
+                    <p>Fabricamos sua peça com todo cuidado</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Entrega</h3>
+                    <p>Receba em casa ou retire em nosso ateliê</p>
+                </div>
+            </div>
+            
+            <div class="delivery-info">
+                <div class="info-card">
+                    <i data-lucide="clock"></i>
+                    <h3>Prazo de Entrega</h3>
+                    <p>5-7 dias úteis para produtos personalizados</p>
+                </div>
+                <div class="info-card">
+                    <i data-lucide="shield-check"></i>
+                    <h3>Garantia</h3>
+                    <p>6 meses contra defeitos de fabricação</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que nossos clientes dizem</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"A tábua personalizada ficou incrível! A qualidade da madeira é excepcional e a gravação do nosso nome ficou perfeita."</p>
+                    <div class="author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="João Silva">
+                        <div>
+                            <strong>João Silva</strong>
+                            <span>Cliente satisfeito</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"O kit completo superou minhas expectativas. Os utensílios são muito bem feitos e a tábua tem um acabamento impecável."</p>
+                    <div class="author">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop&crop=face" alt="Maria Santos">
+                        <div>
+                            <strong>Maria Santos</strong>
+                            <span>Cliente satisfeita</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Atendimento excepcional! Me ajudaram a escolher o tamanho ideal e a personalização ficou linda."</p>
+                    <div class="author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" alt="Carlos Ferreira">
+                        <div>
+                            <strong>Carlos Ferreira</strong>
+                            <span>Cliente satisfeito</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Entre em Contato</h2>
+                <p>Estamos aqui para ajudar você</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i data-lucide="phone"></i>
+                        <div>
+                            <h3>Telefone</h3>
+                            <p>(11) 99999-9999</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="message-circle"></i>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>(11) 99999-9999</p>
+                            <a href="https://wa.me/5511999999999" class="btn btn-success" target="_blank">
+                                Conversar no WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="mail"></i>
+                        <div>
+                            <h3>E-mail</h3>
+                            <p>contato@spoilerchurrasco.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="map-pin"></i>
+                        <div>
+                            <h3>Localização</h3>
+                            <p>São Paulo, SP</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label>Nome</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Telefone</label>
+                            <input type="tel" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label>Assunto</label>
+                            <select name="subject" required>
+                                <option value="">Selecione um assunto</option>
+                                <option value="pedido">Fazer Pedido</option>
+                                <option value="duvida">Dúvida sobre Produtos</option>
+                                <option value="personalizacao">Personalização</option>
+                                <option value="orcamento">Orçamento</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Mensagem</label>
+                            <textarea name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i data-lucide="send"></i>
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i data-lucide="flame"></i>
+                        <span>Spoiler do Churrasco</span>
+                    </div>
+                    <p>Tábuas artesanais que transformam seu churrasco em uma experiência única.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="https://wa.me/5511999999999"><i data-lucide="message-circle"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="#products">Tábuas de Corte</a></li>
+                        <li><a href="#products">Acessórios</a></li>
+                        <li><a href="#products">Kits Completos</a></li>
+                        <li><a href="#custom">Personalizada</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="contact-info">
+                        <p><i data-lucide="phone"></i> (11) 99999-9999</p>
+                        <p><i data-lucide="mail"></i> contato@spoilerchurrasco.com</p>
+                        <p><i data-lucide="map-pin"></i> São Paulo, SP</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Receba novidades e ofertas especiais</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu email">
+                        <button type="submit" class="btn btn-primary">Inscrever</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Spoiler do Churrasco. Todos os direitos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button onclick="toggleCart()">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div id="cart-empty" class="cart-empty">
+            <i data-lucide="shopping-cart"></i>
+            <p>Seu carrinho está vazio</p>
+            <button class="btn btn-primary" onclick="scrollToSection('products'); toggleCart()">
+                Ver Produtos
+            </button>
+        </div>
+        <div id="cart-summary" class="cart-summary">
+            <div class="cart-total">
+                <div class="total-line">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">R$ 0,00</span>
+                </div>
+                <div class="total-line">
+                    <span>Frete:</span>
+                    <span id="cart-shipping">R$ 15,00</span>
+                </div>
+                <div class="total-line total">
+                    <span>Total:</span>
+                    <span id="cart-total">R$ 0,00</span>
+                </div>
+            </div>
+            <button class="btn btn-success checkout-btn" onclick="checkout()">
+                <i data-lucide="message-circle"></i>
+                Finalizar no WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Customization Modal -->
+    <div id="customization-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Personalizar Produto</h3>
+                <button onclick="closeCustomizationModal()">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="customization-form">
+                    <!-- Customization options will be loaded here -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
